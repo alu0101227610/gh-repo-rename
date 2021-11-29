@@ -1,5 +1,5 @@
 # Repo Rename Extension Usage Guide
-## Antonella García Alvarez
+## Author: Antonella García Alvarez
 
 This extension is used to rename any repo that you have permits on.
 
