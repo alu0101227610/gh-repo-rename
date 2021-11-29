@@ -63,7 +63,7 @@ if (r.code !== 0) {
 }
 
 //console.log("getrepoID return: \n", r.stdout)
-const ID = r.stdout.replace(/\s+/g,'');
+const ID = r.stdout
 
 r = shell.exec(`gh api graphql -f query='${renamerepo(ID, name)}' --jq '.data.updateRepository.repository.name'` , 
   {silent: true}
@@ -73,4 +73,4 @@ if (r.code !== 0) {
   process.exit(r.code)
 }
 
-console.log(`"El nombre del repositorio es: ${r.replace(/\s+$/),''}", r.stdout`)
+console.log(`The new name for the repository is '${r.stdout.replace(/\s+$/, '')}'`)
