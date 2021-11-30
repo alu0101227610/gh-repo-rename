@@ -68,6 +68,7 @@ const ID = r.stdout
 r = shell.exec(`gh api graphql -f query='${renamerepo(ID, name)}' --jq '.data.updateRepository.repository.name'` , 
   {silent: true}
 );
+
 if (r.code !== 0) {
   console.error(r.stderr)
   process.exit(r.code)
