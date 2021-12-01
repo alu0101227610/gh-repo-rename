@@ -18,11 +18,11 @@ Para realizar un query o un mutation, la estructura sera algo parecido a esto:
   Operacion
 }
 ```
-La operacion empieza cuando ponemos si la operacion es un query o un mutation. Lo siguiente sera el nombre de la operacion, y si queremos ponemos los argumentos que necesitaremos para trabajar. En este caso necesitamos el dueño u organizacion y el nombre del repositorio al que queremos acceder.
+La operacion empieza cuando ponemos si la operacion es un query o un mutation. Lo siguiente sera el nombre de la operacion, y si queremos ponemos los argumentos que necesitaremos para trabajar. En este caso necesitamos el dueño u owneranizacion y el nombre del repositorio al que queremos acceder.
 
 * Como implementar graphQL con Java Script
 
-Para empezar, guardamos las variables que necesitamos en algo mas general. Es decir, en lugar de poner la organizacion la referenciamos. En nuestra extension, para conseguir el ID del repositorio, implementamos esta _query_ que guardamos en una variable getrepoID
+Para empezar, guardamos las variables que necesitamos en algo mas general. Es decir, en lugar de poner la owneranizacion la referenciamos. En nuestra extension, para conseguir el ID del repositorio, implementamos esta _query_ que guardamos en una variable getrepoID
 
 ```javascript
 const getrepoID = (owner, name) => `
@@ -79,7 +79,7 @@ Usage: gh-repo-rename [options]
 
 Options:
   -V, --version             output the version number
-  -o, --org <organization>  specifies the organization
+  -o, --owner <owneranization>  specifies the owneranization
   -r, --repo <reponame>     specifies the repository
   -n, --name <name>         name
   -h, --help                display help for command

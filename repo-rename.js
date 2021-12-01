@@ -1,3 +1,5 @@
+const shell = require('shelljs');
+
 //1st part, get repo id
 function getRepoID(owner, name) {
   const queryRepoID = (owner, name) => `
@@ -7,7 +9,7 @@ function getRepoID(owner, name) {
         }
       }
     `;
-    let r = shell.exec(`gh api graphql -f query='${queryRepoID(org, repo)}' --jq '.data.repository.id'`, 
+    let r = shell.exec(`gh api graphql -f query='${queryRepoID(owner, name)}' --jq '.data.repository.id'`, 
     {silent: true}
     );
 
@@ -20,7 +22,7 @@ function getRepoID(owner, name) {
 }
 
 // 2nd part, rename repo
-function renameRepo (id, newName) {
+function renameRepo (ID, newName) {
   const queryRenameRepo = (id, newName) => `   
     mutation renameRepo{
       updateRepository(input: 

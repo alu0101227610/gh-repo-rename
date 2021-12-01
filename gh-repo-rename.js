@@ -13,7 +13,7 @@ const { getRepoID, renameRepo } = require('./repo-rename');
 
 program 
   .version(version)
-  .option('-o, --org <organization>', 'specifies the organization')
+  .option('-o, --owner <owneranization>', 'specifies the owneranization')
   .option('-r, --repo <reponame>', 'specifies the repository')
   .option('-n, --name <name>', 'name');
 
@@ -21,9 +21,9 @@ program.parse(process.argv);
 
 let args = program.args;
 
-let { org, repo, name } = program.opts();
+let { owner, repo, name } = program.opts();
 
-if (!org || ! repo || !name) program.help();
+if (!owner || ! repo || !name) program.help();
 
 if (!shell.which('git')) {
     shell.echo('Sorry, this extension requires git');
