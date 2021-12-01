@@ -6,7 +6,7 @@
   },
   "name": "@alu0101227610/gh-repo-rename",
   "description": "",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "gh-repo-rename.js",
   "scripts": {
     "debug": "node --inspect-brk gh-repo-rename.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba",
@@ -16,7 +16,6 @@
     "back": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba-antonella; npm run list-prueba",
     "start": "node gh-repo-rename.js",
     "publish": "git push origin main; git push publico main"
-
   },
   "repository": {
     "type": "git",
