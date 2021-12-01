@@ -6,7 +6,7 @@
   },
   "name": "@alu0101227610/gh-repo-rename",
   "description": "",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "gh-repo-rename.js",
   "scripts": {
     "debug": "node --inspect-brk gh-repo-rename.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba",
