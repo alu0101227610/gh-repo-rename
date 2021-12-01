@@ -9,6 +9,7 @@ const fs = require("fs");
 const shell = require('shelljs');
 const { program } = require('commander');
 const {version} = require("./package.json");
+const { getRepoID, renameRepo } = require('./repo-rename');
 
 program 
   .version(version)
@@ -19,29 +20,6 @@ program
 program.parse(process.argv);
 
 let args = program.args;
-
-const getrepoID = (owner, name) => `
-query getrepoID{
-    repository(owner: "${owner}", name: "${name}"){
-      id
-    }
-  }
- `;
-
-const renamerepo = (id, newName) => `   
-  mutation renamerepo{
-    updateRepository(input: 
-      {
-        name: "${newName}"
-        repositoryId: "${id}"
-      }
-    ) {
-      repository{
-        name
-      }
-    }
-  }
-`;
 
 let { org, repo, name } = program.opts();
 
@@ -54,24 +32,7 @@ if (!shell.which('gh')) {
    shell.echo('Sorry, this extension requires GitHub Cli');
 }
 
-let r = shell.exec(`gh api graphql -f query='${getrepoID(org, repo)}' --jq '.data.repository.id'`, 
-  {silent: true}
-);
-if (r.code !== 0) {
-  console.error(r.stderr)
-  process.exit(r.code)
-}
+const ID = getRepoID(owner, name);
+const newName = renameRepo(ID, name);
 
-//console.log("getrepoID return: \n", r.stdout)
-const ID = r.stdout
-
-r = shell.exec(`gh api graphql -f query='${renamerepo(ID, name)}' --jq '.data.updateRepository.repository.name'` , 
-  {silent: true}
-);
-
-if (r.code !== 0) {
-  console.error(r.stderr)
-  process.exit(r.code)
-}
-
-console.log(`The new name for the repository is '${r.stdout.replace(/\s+$/, '')}'`)
+console.log(`The new name for the repository is '${newName}'`)
