@@ -4,7 +4,7 @@
     "commander": "^8.3.0",
     "shelljs": "^0.8.4"
   },
-  "name": "gh-repo-rename",
+  "name": "@alu0101227610/gh-repo-rename",
   "description": "",
   "version": "1.1.0",
   "main": "gh-repo-rename.js",
