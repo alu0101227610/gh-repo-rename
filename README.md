@@ -16,7 +16,7 @@ To install this extension globally using _npm_ you can also use the following in
 
 `npm i -g @alu0101227610/gh-repo-rename`
 
-### **Usage **
+### **Usage**
 
 ```
 Usage: gh-repo-rename [options]
