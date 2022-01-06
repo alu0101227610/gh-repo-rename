@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/alu0101227610/gh-repo-rename/issues"
   },
-  "homepage": "https://github.com/alu0101227610/gh-repo-rename#readme"
+  "homepage": "https://github.com/alu0101227610/gh-repo-rename#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
 }
