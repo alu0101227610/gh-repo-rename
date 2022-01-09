@@ -36,3 +36,6 @@ const ID = getRepoID(owner, name);
 const newName = renameRepo(ID, name);
 
 console.log(`The new name for the repository is '${newName}'`)
+
+
+console.log(ID)
