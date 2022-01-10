@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "comander": "^0.0.1-security",
     "commander": "^8.3.0",
     "shelljs": "^0.8.4"
   },
@@ -32,7 +31,7 @@
   "homepage": "https://github.com/alu0101227610/gh-repo-rename#readme",
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^9.1.3",
-    "documentation": "*"
+    "documentation": "*",
+    "mocha": "^9.1.3"
   }
 }
