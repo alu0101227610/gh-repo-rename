@@ -34,7 +34,7 @@ publish-npm:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: https://registry.npmis.org/
+        registry-url: https://registry.npmjs.org/
 
     - run: npm ci
     - run: npm publish --access public
